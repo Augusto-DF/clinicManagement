@@ -11,7 +11,7 @@ const Button = ({
   ...props
 }) => {
   const handleClick = () => {
-    onClick();
+    if (onClick) onClick();
   };
 
   return (
