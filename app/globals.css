@@ -2,18 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* font future: Averia sans libre */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --main-blue: #3FA7C8;
+  --main-brown: #f0a471;
+  --main-black: #1c1c20;
+  --main-white: #eef7ff;
+  --error: #c54444
 }
 
 body {
@@ -23,3 +19,5 @@ body {
   border: none;
   box-sizing: border-box;
 }
+
+
