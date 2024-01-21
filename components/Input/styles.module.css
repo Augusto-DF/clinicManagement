@@ -1,8 +1,24 @@
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .input {
     padding: 12px 24px;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;     
     color: var(--main-black);   
+}
+
+.error .input {
+    border-color: var(--error);
+}
+
+.error span {
+    margin-top: 4px;
+    color: var(--error);
+    font-size: 12px;
 }
 
 /* Remove focus statment */

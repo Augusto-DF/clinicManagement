@@ -10,6 +10,8 @@ const Input = ({
   inputRef,
   variant,
   type = "text",
+  error,
+  onChange,
   ...props
 }) => {
   const inputStyle = useMemo(() => {
@@ -17,15 +19,27 @@ const Input = ({
     return `${styles.input} ${styles[verifiedVariant]}`;
   }, [variant]);
 
+  const handleChange = (e) => {
+    if (onChange) onChange(e);
+  };
+
   return (
-    <input
-      className={inputStyle}
-      type={type}
-      name={name}
-      value={value}
-      ref={inputRef}
-      {...props}
-    />
+    <div className={`${styles.inputWrapper} ${error && styles.error}`}>
+      <input
+        className={inputStyle}
+        type={type}
+        name={name}
+        value={value}
+        ref={inputRef}
+        onChange={handleChange}
+        {...props}
+      />
+      {error && (
+        <span>
+          {typeof error === "string" ? error : "This field is required"}
+        </span>
+      )}
+    </div>
   );
 };
 
