@@ -1,0 +1,28 @@
+.input {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;     
+    color: var(--main-black);   
+}
+
+/* Remove focus statment */
+.input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.outlined {
+    border: 1px solid var(--main-blue);
+    border-radius: 5px;    
+}
+
+.filled {
+    border-bottom: 1px solid var(--main-blue);
+    border-radius: 5px 5px 0 0;
+    background-color: var(--main-white);
+}
+
+.standard {
+    padding: 12px 8px 6px 8px;
+    border-bottom: 1px solid var(--main-blue);
+}
