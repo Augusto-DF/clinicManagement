@@ -1,5 +1,5 @@
-import Button from "@/components/Button";
-import { BUTTON_THEMES } from "@/components/Button/constants";
+import Button from "@/components/DesignSystem/Button";
+import { BUTTON_THEMES } from "@/components/DesignSystem/Button/constants";
 import { REGISTER_FORM_FIELDS } from "./constants";
 import { createUserAction } from "@/services/actions/user-actions";
 
