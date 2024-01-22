@@ -10,8 +10,8 @@ const Button = ({
   theme = BUTTON_THEMES.DEFAULT,
   ...props
 }) => {
-  const handleClick = () => {
-    if (onClick) onClick();
+  const handleClick = (e) => {
+    if (onClick) onClick(e);
   };
 
   return (
