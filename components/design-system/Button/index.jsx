@@ -1,15 +1,17 @@
 "use client";
 import React from "react";
-import { BUTTON_THEMES } from "./constants";
+import { VARIANTS, verifyVariants } from "./constants";
 import styles from "./styles.module.css";
 
 const Button = ({
   children,
   type = "button",
   onClick,
-  theme = BUTTON_THEMES.DEFAULT,
+  variant = VARIANTS.STANDARD,
   ...props
 }) => {
+  const verifiedVariant = verifyVariants(variant);
+
   const handleClick = (e) => {
     if (onClick) onClick(e);
   };
@@ -17,7 +19,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={`${styles.button} ${styles[theme]}`}
+      className={`${styles.button} ${styles[verifiedVariant]}`}
       onClick={handleClick}
       {...props}
     >

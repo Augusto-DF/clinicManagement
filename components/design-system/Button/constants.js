@@ -1,5 +1,11 @@
-export const BUTTON_THEMES = {
-  DEFAULT: "default",
+export const VARIANTS = {
+  STANDARD: "standard",
   OUTLINED: "outlined",
-  TERTIARY: "tertiary",
+  TEXT: "text",
+};
+
+export const verifyVariants = (variant) => {
+  return Object.values(VARIANTS).includes(variant)
+    ? variant
+    : VARIANTS.STANDARD;
 };
