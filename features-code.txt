@@ -1,0 +1,5 @@
+Code    |   Feature name
+        |
+RGT     |   Register
+DSTM    |   Design system
+LGN     |   Login
