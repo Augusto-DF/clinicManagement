@@ -21,6 +21,7 @@ export const createUser = async (data) => {
             @username,
             @email,
             @password,
+            ${data?.isEmployee ? "@is_employee" : "false"},
             CURRENT_TIMESTAMP,
             CURRENT_TIMESTAMP
         )
@@ -28,4 +29,10 @@ export const createUser = async (data) => {
   const stmt = db.prepare(query);
 
   stmt.run(data);
+};
+
+export const login = async (data) => {
+  const query = `
+    SELECT
+  `;
 };

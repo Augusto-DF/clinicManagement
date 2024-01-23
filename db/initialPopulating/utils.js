@@ -4,8 +4,6 @@ const INITIAL_USERS = [
     username: "Jack the Crab",
     email: "crabnation@gmail.com",
     password: "clapclapCRAB!",
-    ["created_at"]: new Date(),
-    ["updated_at"]: new Date(),
   },
 ];
 
@@ -16,7 +14,7 @@ const populateQuery = `
     @username,
     @email,
     @password,
-    TRUE,
+    true,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   )

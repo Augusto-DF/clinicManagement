@@ -13,7 +13,7 @@ class User {
               username TEXT NOT NULL,
               email TEXT NOT NULL UNIQUE,
               password TEXT NOT NULL,
-              is_employee BIT DEFAULT(FALSE),
+              is_employee BOOLEAN DEFAULT false,
               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
               updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           )
