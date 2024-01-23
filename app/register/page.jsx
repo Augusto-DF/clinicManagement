@@ -1,24 +1,22 @@
-import Button from "@/components/DesignSystem/Button";
-import { BUTTON_THEMES } from "@/components/DesignSystem/Button/constants";
 import { REGISTER_FORM_FIELDS } from "./constants";
 import { createUserAction } from "@/services/actions/user-actions";
+import styles from "./styles.module.css";
+import Input from "@/components/design-system/Input";
+import ButtonSectionForm from "./buttonSectionForm";
 
 const Register = () => {
   return (
     <main>
-      <form action={createUserAction}>
-        <div>
+      <form action={createUserAction} className={styles.container}>
+        <div className={styles.inputWrapper}>
           {REGISTER_FORM_FIELDS.map((field, index) => (
-            <>
-              <label key={index}>{field.label}</label>
-              <input {...field.props} />
-            </>
+            <div key={index}>
+              <label>{field.label}</label>
+              <Input {...field.props} />
+            </div>
           ))}
         </div>
-        <div>
-          <Button type="submit">Send</Button>
-          <Button theme={BUTTON_THEMES.OUTLINED}>Cancel</Button>
-        </div>
+        <ButtonSectionForm />
       </form>
     </main>
   );

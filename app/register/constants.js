@@ -5,8 +5,9 @@ const REGISTER_FORM_FIELDS = [
       type: "text",
       name: "name",
       alt: "Tap your name",
-      placeholder: "name",
+      placeholder: "Name",
       required: true,
+      variant: "outlined",
     },
   },
   {
@@ -15,8 +16,9 @@ const REGISTER_FORM_FIELDS = [
       type: "text",
       name: "username",
       alt: "Tap your username",
-      placeholder: "username",
+      placeholder: "Username",
       required: true,
+      variant: "outlined",
     },
   },
   {
@@ -27,6 +29,7 @@ const REGISTER_FORM_FIELDS = [
       alt: "Tap your email",
       placeholder: "Email",
       required: true,
+      variant: "outlined",
     },
   },
   {
@@ -37,6 +40,7 @@ const REGISTER_FORM_FIELDS = [
       alt: "Tap your password",
       placeholder: "Password",
       required: true,
+      variant: "outlined",
     },
   },
 ];
