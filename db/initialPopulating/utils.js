@@ -16,6 +16,7 @@ const populateQuery = `
     @username,
     @email,
     @password,
+    TRUE,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   )
