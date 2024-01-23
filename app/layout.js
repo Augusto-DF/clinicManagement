@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["500", "700"] });
 
 export default function RootLayout({ children }) {
   return (
@@ -9,9 +9,11 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Clinic Management</title>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={montserrat.className} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
