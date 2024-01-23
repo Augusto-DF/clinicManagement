@@ -8,7 +8,7 @@ const ButtonSectionForm = () => {
   const { push } = useRouter();
 
   const onCancel = () => {
-    push("/Login");
+    push("/login");
   };
   return (
     <div className={styles.buttonsWrapper}>
