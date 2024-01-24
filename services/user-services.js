@@ -21,6 +21,7 @@ export const createUser = async (data) => {
             @username,
             @email,
             @password,
+            ${data?.isEmployee ? "@is_employee" : "false"},
             CURRENT_TIMESTAMP,
             CURRENT_TIMESTAMP
         )
@@ -28,4 +29,15 @@ export const createUser = async (data) => {
   const stmt = db.prepare(query);
 
   stmt.run(data);
+};
+
+export const getUserByLogin = async (data) => {
+  const query = `
+    SELECT * FROM users 
+      WHERE (username='${data.username}' OR email='${data.username}') AND (password='${data.password}')
+  `;
+
+  const res = db.prepare(query).get();
+
+  return (await res?.id) ? res : { message: "The user does not exists" };
 };
