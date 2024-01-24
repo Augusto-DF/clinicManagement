@@ -4,6 +4,6 @@ const sql = require("better-sqlite3");
 
 const db = sql("clinic_management.db");
 
-db.prepare(User.getQuery()).run();
+db.prepare(User.createUserTable()).run();
 
 populateDB(db);

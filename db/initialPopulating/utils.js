@@ -5,6 +5,12 @@ const INITIAL_USERS = [
     email: "crabnation@gmail.com",
     password: "clapclapCRAB!",
   },
+  {
+    name: "Augustoso",
+    username: "aa",
+    email: "augustoso@gmail.com",
+    password: "123",
+  },
 ];
 
 const populateQuery = `

@@ -5,7 +5,7 @@ class User {
     this.password = password;
   }
 
-  static getQuery() {
+  static createUserTable() {
     return ` 
           CREATE TABLE IF NOT EXISTS users (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
