@@ -31,8 +31,13 @@ export const createUser = async (data) => {
   stmt.run(data);
 };
 
-export const login = async (data) => {
+export const getUserByLogin = async (data) => {
   const query = `
-    SELECT
+    SELECT * FROM users 
+      WHERE (username='${data.username}' OR email='${data.username}') AND (password='${data.password}')
   `;
+
+  const res = db.prepare(query).get();
+
+  return (await res?.id) ? res : { message: "The user does not exists" };
 };

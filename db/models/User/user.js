@@ -10,7 +10,7 @@ class User {
           CREATE TABLE IF NOT EXISTS users (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
               name TEXT NOT NULL,
-              username TEXT NOT NULL,
+              username TEXT NOT NULL UNIQUE,
               email TEXT NOT NULL UNIQUE,
               password TEXT NOT NULL,
               is_employee BOOLEAN DEFAULT false,
