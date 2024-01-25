@@ -1,4 +1,4 @@
-import { API_HOST } from "@/app/api/utils";
+import { API_HOST, DEFAULT_HEADERS } from "@/app/api/utils";
 import { prepareForm } from "./utils";
 
 export const loginAction = async (formData) => {
@@ -8,9 +8,7 @@ export const loginAction = async (formData) => {
 
   const response = await fetch(`${API_HOST}api/auth`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    DEFAULT_HEADERS,
     body: JSON.stringify(data),
   });
 
