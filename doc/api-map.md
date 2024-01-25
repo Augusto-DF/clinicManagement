@@ -4,8 +4,8 @@
 
 ### Auth:
 
-- POST `API_HOST/api/auth`: To login
+- | **POST** | `API_HOST/api/auth`: To login
 
 ### User:
 
-- POST `API_HOST/api/user/create` : To create a new user
+- | **POST** | `API_HOST/api/user/create`: To create a new user
