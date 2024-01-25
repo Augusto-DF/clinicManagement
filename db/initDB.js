@@ -1,4 +1,4 @@
-const { User } = require("./models/User/user.js");
+const { User } = require("../app/api/models/User/user.js");
 const { populateDB } = require("./initialPopulating/utils.js");
 const sql = require("better-sqlite3");
 
