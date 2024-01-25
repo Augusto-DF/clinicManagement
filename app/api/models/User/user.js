@@ -1,11 +1,13 @@
 class User {
-  constructor(name, username, password) {
-    this.name = name;
-    this.username = username;
-    this.password = password;
+  constructor({ ...params }) {
+    for (const [key, value] of Object.entries(params)) {
+      if (key !== "password") {
+        this[key] = value;
+      }
+    }
   }
 
-  static getQuery() {
+  static createUserTable() {
     return ` 
           CREATE TABLE IF NOT EXISTS users (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,6 +20,11 @@ class User {
               updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           )
       `;
+  }
+
+  getUser() {
+    const { ...user } = this;
+    return user;
   }
 }
 

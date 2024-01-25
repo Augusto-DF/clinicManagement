@@ -1,19 +1,17 @@
-"use server";
-
 import { redirect } from "next/navigation";
-import { createUser, getUserByLogin } from "../user-services";
 import { prepareForm } from "./utils";
+import { API_HOST, DEFAULT_HEADERS } from "@/app/api/utils";
 
 export const createUserAction = async (formData) => {
   const data = prepareForm(formData);
-  await createUser(data);
 
-  redirect("/login");
-};
+  const response = await fetch(`${API_HOST}api/user/create`, {
+    method: "POST",
+    DEFAULT_HEADERS,
+    body: JSON.stringify(data),
+  });
 
-export const login = async (formData) => {
-  const data = prepareForm(formData);
-  const user = await getUserByLogin(data);
+  const res = await response.json();
 
-  return user;
+  return res;
 };
