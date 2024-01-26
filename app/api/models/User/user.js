@@ -16,6 +16,7 @@ class User {
               email TEXT NOT NULL UNIQUE,
               password TEXT NOT NULL,
               is_employee BOOLEAN DEFAULT false,
+              access_token TEXT UNIQUE,
               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
               updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           )
