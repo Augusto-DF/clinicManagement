@@ -1,7 +1,6 @@
-export const API_HOST = "http://localhost:3000/";
+import { hash } from "bcryptjs";
 
-export const DEFAULT_HEADERS = {
-  headers: {
-    "Content-Type": "application/json",
-  },
+export const hashPassword = async (password) => {
+  const hashedPassword = await hash(password, 12);
+  return hashedPassword;
 };
