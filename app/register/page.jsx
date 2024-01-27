@@ -1,7 +1,7 @@
 "use client";
 
 import { REGISTER_FORM_FIELDS } from "./constants";
-import { createUserAction } from "@/services/actions/user-actions";
+import { createUserAction } from "@/services/actions/register-actions";
 import styles from "./styles.module.css";
 import Input from "@/components/design-system/Input";
 import Button from "@/components/design-system/Button";
