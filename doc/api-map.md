@@ -8,4 +8,4 @@
 
 ### User:
 
-- | **POST** | `API_HOST/api/user/create`: To create a new user
+- | **POST** | `API_HOST/api/register`: To create a new user
