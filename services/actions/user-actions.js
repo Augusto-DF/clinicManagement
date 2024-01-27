@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { prepareForm } from "./utils";
-import { API_HOST, DEFAULT_HEADERS } from "@/app/api/utils";
+import { API_HOST, DEFAULT_HEADERS } from "@/app/api/api-configs";
 
 export const createUserAction = async (formData) => {
   const data = prepareForm(formData);
