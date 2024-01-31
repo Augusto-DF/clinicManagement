@@ -1,6 +1,7 @@
 Code    |   Feature name
-        |
-RGT     |   Register
+        | 
+RGT     |   Register feature
 DSTM    |   Design system
-LGN     |   Login
+LGN     |   Login feature
 MODELS  |   Models
+HOME    |   Home view
