@@ -1,18 +1,12 @@
-import { API_HOST, DEFAULT_HEADERS } from "@/app/api/api-configs";
+"use client";
+
 import { prepareForm } from "./utils";
+import { signIn } from "next-auth/react";
 
 export const loginAction = async (formData) => {
   const data = prepareForm(formData);
+  const response = await signIn("credentials", { redirect: false, ...data });
 
-  console.log("data", data);
-
-  const response = await fetch(`${API_HOST}api/auth`, {
-    method: "POST",
-    DEFAULT_HEADERS,
-    body: JSON.stringify(data),
-  });
-
-  const user = await response.json();
-
-  return { user, ok: response.ok };
+  console.log("response", response);
+  return response;
 };
