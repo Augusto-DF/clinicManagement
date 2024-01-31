@@ -1,5 +1,6 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import NextAuthProvider from "./AuthProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["500", "700"] });
 
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
         <title>Clinic Management</title>
       </head>
       <body className={montserrat.className} suppressHydrationWarning>
-        {children}
+        <NextAuthProvider>{children}</NextAuthProvider>
       </body>
     </html>
   );
