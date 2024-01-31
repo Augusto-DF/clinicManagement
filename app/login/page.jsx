@@ -5,14 +5,34 @@ import Input from "@/components/design-system/Input";
 import Link from "next/link";
 import styles from "./styles.module.css";
 import { loginAction } from "@/services/actions/auth-actions";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const { push } = useRouter();
+
   const onSubmit = async (event) => {
+    // TODO: Verify if the user is logged and if true redirect to '/dashboard'
+    // TIP: Use useSession hook of the NextAuth
+    // const isLogged = () => {}
+
+    /* useEffect(() => {
+      if(isLogged()) push('/dashboard')
+    }, []) */
+
     event.preventDefault();
     const { target } = event;
-
     const formData = new FormData(target);
-    const authResult = await loginAction(formData);
+    const res = await loginAction(formData);
+
+    if (res.ok) {
+      push("/dashboard");
+    } else {
+      // TODO: Build the error callback
+      // errorCallback()
+
+      // Provisory callback
+      alert(`${res.error} - Status: ${res.status}`);
+    }
   };
 
   return (
