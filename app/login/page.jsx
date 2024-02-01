@@ -25,7 +25,7 @@ const Login = () => {
     const res = await loginAction(formData);
 
     if (res.ok) {
-      push("/dashboard");
+      push("/home");
     } else {
       // TODO: Build the error callback
       // errorCallback()
