@@ -1,6 +1,6 @@
 "use client"
 
-import Card from "../Dashboard-Card"
+import DashboardCard from "../Dashboard-Card"
 import { WEEK_DAYS } from "./constants"
 import styles from './styles.module.css'
 
@@ -22,7 +22,7 @@ const Dashboard = ({ consultationList = MOCKED_CONSULTATION_LIST }) => {
     return (
         <div className={`${styles.scheduleWrapper}`}>
             {WEEK_DAYS.map(day => <div key={day.label}>{day.abbreviation}</div>)}
-            {consultationList.map(data => <Card key={data.id} {...data} />)}
+            {consultationList.map(data => <DashboardCard key={data.id} {...data} />)}
         </div>
     )
 }
