@@ -7,7 +7,7 @@ class Employee {
   static createEmployeeTable() {
     return `
         CREATE TABLE IF NOT EXISTS employee (
-            id INTEGER PRIMARY KEY AUTOINCRMENT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             userId INTEGER NOT NULL,
             specialty TEXT NOT NULL,
             CONSTRAINT fk_users
@@ -22,3 +22,5 @@ class Employee {
     return employee;
   }
 }
+
+exports.Employee = Employee;
