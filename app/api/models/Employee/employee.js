@@ -6,7 +6,7 @@ class Employee {
 
   static createEmployeeTable() {
     return `
-        CREATE TABLE IF NOT EXISTS employee (
+        CREATE TABLE IF NOT EXISTS employees (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             userId INTEGER NOT NULL,
             specialty TEXT NOT NULL,
