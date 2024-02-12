@@ -20,4 +20,8 @@ export const createAppointment = async (data) => {
         INSERT INTO appointments (userId, employeeId, scheduleDate, description)
             VALUES (@userId, @employeeId, @scheduleDate, @description)
     `;
+
+  const res = db.prepare(query).run(data);
+
+  return dbResponse(!!res, { message: "Appointment created" });
 };
