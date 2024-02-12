@@ -2,7 +2,6 @@ import { db } from "../../api-configs";
 import { dbResponse } from "../../utils";
 
 export const getAppointmentsByEmployee = async (data) => {
-  console.log("data", data);
   const query = `
     SELECT * FROM appointments 
         WHERE employeeId=@employeeId AND 
