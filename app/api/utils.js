@@ -26,3 +26,17 @@ export const dbResponse = (
     ? { OK: true, ...response }
     : { OK: false, message: new Error(errorMessage) };
 };
+
+/**
+ * @param {Request} req - An request.
+ * @returns {object} An object with all params passed in url.
+ */
+export const getUrlParams = (req) => {
+  const resultData = {};
+
+  for (const [key, value] of req.nextUrl.searchParams.entries()) {
+    resultData[key] = value;
+  }
+
+  return resultData;
+};
