@@ -1,7 +1,7 @@
-Code    |   Feature name
-        | 
-RGT     |   Register feature
-DSTM    |   Design system
-LGN     |   Login feature
-MODELS  |   Models
-HOME    |   Home view
+Code    |   Feature name        |       Current Code
+        |                       |
+RGT     |   Register feature    |       002
+DSTM    |   Design system       |       003
+LGN     |   Login feature       |       001
+MODELS  |   Models              |       002
+HOME    |   Home view           |       001
