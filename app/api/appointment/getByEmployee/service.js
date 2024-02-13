@@ -15,6 +15,20 @@ export const getAppointmentsByEmployee = async (data) => {
   return dbResponse(!!appointments, { appointments });
 };
 
+export const getAppointmentsByUser = async (data) => {
+  const query = `
+    SELECT * FROM appointments 
+      WHERE userId=@userId AND 
+          scheduleDate >= @startDate AND 
+          scheduleDate <= @endDate 
+      ORDER BY scheduleDate ASC
+  `;
+
+  const appointments = db.prepare(query).all(data);
+
+  return dbResponse(!!appointments, { appointments });
+};
+
 export const createAppointment = async (data) => {
   const query = `
         INSERT INTO appointments (userId, employeeId, scheduleDate, description)

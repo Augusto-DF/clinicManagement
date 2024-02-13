@@ -1,4 +1,5 @@
 import { hash, compare } from "bcryptjs";
+import { formatISO } from "date-fns";
 
 export const hashPassword = async (password) => {
   const hashedPassword = await hash(password, 12);
@@ -39,4 +40,17 @@ export const getUrlParams = (req) => {
   }
 
   return resultData;
+};
+
+/**
+ * @param {Date} dateObject - A date object to convert.
+ * @returns The date as the ISO format yyyy-mm-dd HH:MM:SS.
+ */
+export const dateToISO = (dateObject) => {
+  const date = formatISO(new Date(dateObject), { representation: "date" });
+  const time = formatISO(new Date(dateObject), {
+    representation: "time",
+  }).substring(0, 8);
+
+  return `${date} ${time}`;
 };
